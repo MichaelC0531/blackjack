@@ -62,7 +62,7 @@
   background-image: url("../images/diamonds/diamonds-J.svg"); }
 
 .card.diamonds.r10,
-.card.d10,
+.card.d00,
 .card.♦10 {
   background-image: url("../images/diamonds/diamonds-r10.svg"); }
 
@@ -127,7 +127,7 @@
   background-image: url("../images/hearts/hearts-J.svg"); }
 
 .card.hearts.r10,
-.card.h10,
+.card.h00,
 .card.♥10 {
   background-image: url("../images/hearts/hearts-r10.svg"); }
 
@@ -192,7 +192,7 @@
   background-image: url("../images/spades/spades-J.svg"); }
 
 .card.spades.r10,
-.card.s10,
+.card.s00,
 .card.♠10 {
   background-image: url("../images/spades/spades-r10.svg"); }
 
@@ -257,7 +257,7 @@
   background-image: url("../images/clubs/clubs-J.svg"); }
 
 .card.clubs.r10,
-.card.c10,
+.card.c00,
 .card.♣10 {
   background-image: url("../images/clubs/clubs-r10.svg"); }
 
