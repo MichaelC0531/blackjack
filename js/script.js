@@ -55,11 +55,31 @@ let deck = {
 const card1 = document.getElementById('playercard1')
 const card2 = document.getElementById('playercard2')
 const card3 = document.getElementById('playercard3')
+const card4 = document.getElementById('playercard4')
+const card5 = document.getElementById('playercard5')
+const card6 = document.getElementById('playercard6')
+const card7 = document.getElementById('playercard7')
+const card8 = document.getElementById('playercard8')
+const card9 = document.getElementById('playercard9')
+const card10 = document.getElementById('playercard10')
+const card11 = document.getElementById('playercard11')
+
 const hcard1 = document.getElementById('housecard1')
 const hcard2 = document.getElementById('housecard2')
+const hcard3 = document.getElementById('housecard3')
+const hcard4 = document.getElementById('housecard4')
+const hcard5 = document.getElementById('housecard5')
+const hcard6 = document.getElementById('housecard6')
+
 const bet100 = document.getElementById('100')
 const hit = document.getElementById('hit')
-const order = [card1, card2, hcard1, hcard2]
+const stand = document.getElementById('stand')
+const result = document.getElementById('result')
+
+const first4Order = [card1, card2, hcard1, hcard2]
+const playerOrder = [card3, card4, card5, card6, card7, card8, card9, card10, card11]
+const houseOrder = [hcard3, hcard4, hcard5, hcard6]
+
 let playershand = 0
 let househand = 0
 
@@ -70,15 +90,13 @@ let randomCardFromDeck = function () {
 }
 
 let gamestarts = function () {
-    for (let card of order) {
-        // const randomNum = Math.floor(Math.random() * Object.keys(deck).length)
-        // const randomCard = (Object.keys(deck)[randomNum])
+    for (let card of first4Order) {
         let randomCard = randomCardFromDeck()
         if (card === hcard1) {
         card.className = 'card large back-red ' + randomCard;
         househand += deck[randomCard]
         }
-            else if (card ===hcard2) {
+            else if (card === hcard2) {
                 card.className = 'card large ' + randomCard;
                 househand += deck[randomCard]
             }
@@ -89,16 +107,52 @@ let gamestarts = function () {
         delete deck[randomCard]
     }
 }
-let hitme = function () {
+const hitme = function(card) {
     let randomCard = randomCardFromDeck()
-    card3.className = 'card large ' + randomCard;
+    card.className = 'card large ' + randomCard;
     playershand += deck[randomCard]
     delete deck[randomCard]
 }
-if (playershand === 21) {console.log('BLACKJACK!!!!!!!!!')}
-    else {hit.addEventListener('click', hitme)}
+const hithouse = function(card) {
+    let randomCard = randomCardFromDeck()
+    card.className = 'card large ' + randomCard;
+    househand += deck[randomCard]
+    delete deck[randomCard]
+}
 
 
+if (playershand === 21) {
+    console.log('BLACKJACK!!!!!!!!!')
+} else {
+    let i = 0
+    hit.addEventListener('click', function() {
+        if (playershand < 21) {
+            hitme(playerOrder[i])
+            i++;
+            console.log(playershand)
+        }
+            else if (playershand === 21) {
+                result.innerText = 'BLACKJACK21';
+            } else if (playershand > 21) {
+                result.innerText = 'You Lost';
+            }
+    })
+}
+const nomore = function () {
+    hit.disabled = true
+    hcard1.classList.remove('back-red')
+    while (househand < 16) {
+        let i = 0;
+        hithouse(houseOrder[i]) 
+    } 
+    if (househand > playershand) {
+        result.innerText = 'You Lost';
+        console.log('LOST')
+    } else if (househand < playershand) {
+        result.innerText = 'You WON!!';
+    } else { result.innerText = '-TIE-';
+        console.log('-TIE-')}
+}
+stand.addEventListener('click', nomore)  
 
 bet100.addEventListener('click', gamestarts)
-
