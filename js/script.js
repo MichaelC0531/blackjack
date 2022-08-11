@@ -52,6 +52,7 @@ let deck = {
     cK: 10,
     cA: 11,
 }
+
 const card1 = document.getElementById('playercard1')
 const card2 = document.getElementById('playercard2')
 const card3 = document.getElementById('playercard3')
@@ -93,30 +94,35 @@ let gamestarts = function () {
     for (let card of first4Order) {
         let randomCard = randomCardFromDeck()
         if (card === hcard1) {
-        card.className = 'card large back-red ' + randomCard;
+        card.className = 'card large house back-red ' + randomCard;
         househand += deck[randomCard]
+        card.style.opacity = 1
         }
             else if (card === hcard2) {
-                card.className = 'card large ' + randomCard;
+                card.className = 'card large house ' + randomCard;
                 househand += deck[randomCard]
+                card.style.opacity = 1
             }
             else { 
-                card.className = 'card large ' + randomCard;
+                card.className = 'card large player ' + randomCard;
                 playershand += deck[randomCard]
+                card.style.opacity = 1
             }
         delete deck[randomCard]
     }
 }
 const hitme = function(card) {
     let randomCard = randomCardFromDeck()
-    card.className = 'card large ' + randomCard;
+    card.className = 'card large player ' + randomCard;
     playershand += deck[randomCard]
+    card.style.opacity = 1
     delete deck[randomCard]
 }
 const hithouse = function(card) {
     let randomCard = randomCardFromDeck()
-    card.className = 'card large ' + randomCard;
+    card.className = 'card large player ' + randomCard;
     househand += deck[randomCard]
+    card.style.opacity = 1
     delete deck[randomCard]
 }
 
@@ -126,16 +132,15 @@ if (playershand === 21) {
 } else {
     let i = 0
     hit.addEventListener('click', function() {
-        if (playershand < 21) {
+        if (playershand === 21) {
+            result.innerText = 'BLACKJACK21';
+        } else if (playershand < 21) {
             hitme(playerOrder[i])
             i++;
-            console.log(playershand)
-        }
-            else if (playershand === 21) {
-                result.innerText = 'BLACKJACK21';
-            } else if (playershand > 21) {
-                result.innerText = 'You Lost';
+            if (playershand > 21) {
+            result.innerText = 'You Lost';
             }
+        }
     })
 }
 const nomore = function () {
@@ -146,13 +151,15 @@ const nomore = function () {
         hithouse(houseOrder[i]) 
     } 
     if (househand > playershand) {
-        result.innerText = 'You Lost';
-        console.log('LOST')
+        result.innerText = 'You Lost'
     } else if (househand < playershand) {
         result.innerText = 'You WON!!';
     } else { result.innerText = '-TIE-';
-        console.log('-TIE-')}
+    }
 }
 stand.addEventListener('click', nomore)  
 
 bet100.addEventListener('click', gamestarts)
+
+
+

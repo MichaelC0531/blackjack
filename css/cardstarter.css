@@ -361,18 +361,19 @@ h3 span {
   font-weight: bolder;
   font-size: 30px;
 }
-p {
+p { 
   color: red;
-  font-size: 100px;
+  /* font-size: 100px;
   font-weight: bolder;
   position: absolute;
   top: 280px;
-  left: 180px;
-  width: 70%;
-  text-align: center;
+  /* left: 180px; */
+  /* width: 70%; */
+  text-align: center; 
   font-family: monospace;
 }
 #table {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -391,6 +392,7 @@ p {
   margin: 30px auto; 
 }
 #spot1, #spot2 {
+  position: absolute;
   height: 145px;
   width: 103px;
   border-style: solid;
@@ -398,7 +400,76 @@ p {
   border-color: grey;
   border-radius: 10px;
 }
-/* #playercard1 {
+#spot1 {
+  top: 5%;
+}
+#spot2 {
+  bottom: 5%;
+}
+#logo {
   position: absolute;
-  bottom: 36px;
-} */
+}
+#playercard1 {
+  position: absolute;
+  bottom: -14px;
+}
+#playercard2 {
+  left: 46%;
+}
+#playercard3 {
+  left: 48%;
+}
+#playercard4 {
+  left: 50%;
+}
+#playercard5 {
+  left: 52%;
+}
+#playercard6 {
+  left: 54%;
+}
+#playercard7 {
+  left: 56%;
+}
+#playercard8 {
+  left: 58%;
+}
+#playercard9 {
+  left: 60%;
+}
+#playercard10 {
+  left: 62%;
+}
+#playercard11 {
+  left: 64%;
+}
+.player {
+  position:absolute;
+  bottom: -14px;
+}
+#housecard2 {
+  left: 46%;
+}
+#housecard3 {
+  left: 48%;
+}
+#housecard4 {
+  left: 50%;
+}
+#housecard5 {
+  left: 52%;
+}
+#housecard6 {
+  left: 54%;
+}
+
+.house {
+  position: absolute;
+  top: 31px;
+  z-index: 1;
+}
+/* ---------------------------------------- */
+.card {
+  border: solid red;
+  opacity: 0;
+}
