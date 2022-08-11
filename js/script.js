@@ -158,7 +158,6 @@ const nomore = function () {
     }
 }
 stand.addEventListener('click', nomore)  
-
 bet100.addEventListener('click', gamestarts)
 
 
