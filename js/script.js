@@ -52,23 +52,53 @@ let deck = {
     cK: 10,
     cA: 11,
 }
+const card1 = document.getElementById('playercard1')
 const card2 = document.getElementById('playercard2')
 const card3 = document.getElementById('playercard3')
 const hcard1 = document.getElementById('housecard1')
 const hcard2 = document.getElementById('housecard2')
 const bet100 = document.getElementById('100')
-const order = [card2, card3, hcard1, hcard2]
+const hit = document.getElementById('hit')
+const order = [card1, card2, hcard1, hcard2]
+let playershand = 0
+let househand = 0
+
+let randomCardFromDeck = function () {
+    const randomNum = Math.floor(Math.random() * Object.keys(deck).length)
+    const randomKey = (Object.keys(deck)[randomNum])
+    return randomKey
+}
+
 let gamestarts = function () {
     for (let card of order) {
-        const randomNum = Math.floor(Math.random() * Object.keys(deck).length)
-        const randomCard = (Object.keys(deck)[randomNum])
+        // const randomNum = Math.floor(Math.random() * Object.keys(deck).length)
+        // const randomCard = (Object.keys(deck)[randomNum])
+        let randomCard = randomCardFromDeck()
         if (card === hcard1) {
-        hcard1.className = 'card large back-red ' + randomCard;
+        card.className = 'card large back-red ' + randomCard;
+        househand += deck[randomCard]
         }
-            else { card.className = 'card large ' + randomCard }
+            else if (card ===hcard2) {
+                card.className = 'card large ' + randomCard;
+                househand += deck[randomCard]
+            }
+            else { 
+                card.className = 'card large ' + randomCard;
+                playershand += deck[randomCard]
+            }
         delete deck[randomCard]
     }
 }
+let hitme = function () {
+    let randomCard = randomCardFromDeck()
+    card3.className = 'card large ' + randomCard;
+    playershand += deck[randomCard]
+    delete deck[randomCard]
+}
+if (playershand === 21) {console.log('BLACKJACK!!!!!!!!!')}
+    else {hit.addEventListener('click', hitme)}
+
+
+
 bet100.addEventListener('click', gamestarts)
-const card1 = document.getElementById('playercard1')
-card1.className = 'card large hK'
+
