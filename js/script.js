@@ -120,7 +120,7 @@ const hitme = function(card) {
 }
 const hithouse = function(card) {
     let randomCard = randomCardFromDeck()
-    card.className = 'card large player ' + randomCard;
+    card.className = 'card large house ' + randomCard;
     househand += deck[randomCard]
     card.style.opacity = 1
     delete deck[randomCard]
