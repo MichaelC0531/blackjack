@@ -94,9 +94,9 @@ let gamestarts = function () {
     for (let card of first4Order) {
         let randomCard = randomCardFromDeck()
         if (card === hcard1) {
-        card.className = 'card large house back-red ' + randomCard;
-        househand += deck[randomCard]
-        card.style.opacity = 1
+            card.className = 'card large house back-red ' + randomCard;
+            househand += deck[randomCard]
+            card.style.opacity = 1
         }
             else if (card === hcard2) {
                 card.className = 'card large house ' + randomCard;
@@ -110,7 +110,13 @@ let gamestarts = function () {
             }
         delete deck[randomCard]
     }
+    bet100.disabled = true
+
+    if (playershand === 21) {
+        result.innerText = 'BLACKJACK';
+    }
 }
+
 const hitme = function(card) {
     let randomCard = randomCardFromDeck()
     card.className = 'card large player ' + randomCard;
@@ -118,43 +124,53 @@ const hitme = function(card) {
     card.style.opacity = 1
     delete deck[randomCard]
 }
+
 const hithouse = function(card) {
     let randomCard = randomCardFromDeck()
-    card.className = 'card large player ' + randomCard;
+    card.className = 'card large house ' + randomCard;
     househand += deck[randomCard]
     card.style.opacity = 1
     delete deck[randomCard]
 }
 
 
-if (playershand === 21) {
-    console.log('BLACKJACK!!!!!!!!!')
-} else {
-    let i = 0
-    hit.addEventListener('click', function() {
-        if (playershand === 21) {
-            result.innerText = 'BLACKJACK21';
-        } else if (playershand < 21) {
-            hitme(playerOrder[i])
-            i++;
-            if (playershand > 21) {
-            result.innerText = 'You Lost';
-            }
+let playerI = 0
+hit.addEventListener('click', function() {
+    if (playershand === 21) {
+        result.innerText = 'BLACKJACK';
+        stand.disabled = true
+        hit.disabled = true
+    } else if (playershand < 21) {
+        hitme(playerOrder[playerI])
+        playerI++;
+        if (playershand > 21) {
+            result.innerText = 'LOSE';
+            stand.disabled = true
+            hit.disabled = true
         }
-    })
-}
+    }
+})
+
+let houseI = 0
 const nomore = function () {
     hit.disabled = true
     hcard1.classList.remove('back-red')
     while (househand < 16) {
-        let i = 0;
-        hithouse(houseOrder[i]) 
-    } 
-    if (househand > playershand) {
-        result.innerText = 'You Lost'
-    } else if (househand < playershand) {
-        result.innerText = 'You WON!!';
-    } else { result.innerText = '-TIE-';
+        hithouse(houseOrder[houseI])
+        houseI++; 
+    }
+    if (househand > playershand && househand <= 21) {
+        result.innerText = 'LOSE'
+        stand.disabled = true
+        hit.disabled = true
+    } else if (househand < playershand || househand > 21) {
+        result.innerText = 'WIN';
+        stand.disabled = true
+        hit.disabled = true
+    } else {
+        result.innerText = 'TIE';
+        stand.disabled = true
+        hit.disabled = true
     }
 }
 stand.addEventListener('click', nomore)  
