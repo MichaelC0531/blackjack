@@ -362,15 +362,18 @@ h3 span {
   font-size: 30px;
 }
 p { 
-  color: red;
-  /* font-size: 100px;
+  color: rgb(250, 254, 0);
+  font-size: 50px;
   font-weight: bolder;
   position: absolute;
-  top: 280px;
-  /* left: 180px; */
-  /* width: 70%; */
-  text-align: center; 
+  top: 300px;
+  left: 180px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: monospace;
+  z-index: 10;
 }
 #table {
   position: relative;
@@ -470,6 +473,6 @@ p {
 }
 /* ---------------------------------------- */
 .card {
-  border: solid red;
+  border: solid;
   opacity: 0;
 }
