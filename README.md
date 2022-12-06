@@ -9,7 +9,7 @@ First you place a bet by clicking on $100 to start the game. The 2 cards will be
 
 **Good Luck !!!!!** 
 
-[(https://wtfmic.github.io/blackjack/)]
+[(https://MichaelC0531.github.io/blackjack/)]
 
 ![Screenshot](screenshot.png)
 
