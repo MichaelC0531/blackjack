@@ -1,4 +1,5 @@
 # WINNER WINNER CHICKEN DINNER -21- BlackJack
+[https://MichaelC0531.github.io/blackjack/]
 ---
 ## Intro
 
@@ -9,7 +10,6 @@ First you place a bet by clicking on $100 to start the game. The 2 cards will be
 
 **Good Luck !!!!!** 
 
-[(https://MichaelC0531.github.io/blackjack/)]
 
 ![Screenshot](screenshot.png)
 
