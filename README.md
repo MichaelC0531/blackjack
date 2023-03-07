@@ -10,7 +10,4 @@ First you place a bet by clicking on $100 to start the game. The 2 cards will be
 
 **Good Luck !!!!!** 
 
-
-![Screenshot](screenshot.png)
-
-
+![blackjack](https://user-images.githubusercontent.com/109554223/223303383-2ae6b53f-917b-4e5b-8826-31da4eebf349.png)
