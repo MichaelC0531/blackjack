@@ -29,7 +29,11 @@ Basic Game Flow:
 Potential feature to add:  
 1. Card counting practice mode - Allow players to choose number of decks they play with and used cards are discard after each round  
 2. Total money tracking system - Create different money amount buttons and a number display to let player knows how much they are winning or losing   
-
+  
+#### Technology Used:  
+- HTML
+- CSS3
+- Javascript  
 
 **Good Luck !!!!!** 
 
