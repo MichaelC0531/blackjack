@@ -1,9 +1,7 @@
 # WINNER WINNER CHICKEN DINNER -21- BlackJack
 [https://MichaelC0531.github.io/blackjack/]
 ---
-## Intro 
-
-Game description
+##Game description
 Blackjack consists of 52 cards and 2 players: a player and a dealer. The goal of the game is to beat the dealer. The easiest way to do so is to get as close to 21 points as possible before the dealer or get a Blackjack (21 points exactly).
 
 A player loses if:
