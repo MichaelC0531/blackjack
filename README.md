@@ -6,18 +6,20 @@ Blackjack consists of 52 cards and 2 players: a player and a dealer. The goal of
 
 A player loses if:  
 
-The dealer gets closer to 21 points than the player at the end of the round.
-If a player has more than 21 points.
-If the dealer's hand value goes over 21 points.
-It's a tie when:
-
-Both players have the same points on their hands.
-Card's values:
-
-Aces can be either 1 or 11 points - the player chooses the value;
-Points for all other cards are their face value;
-K, Q, J are 10 points cards;
-
+1. The dealer gets closer to 21 points than the player at the end of the round.  
+2. If a player has more than 21 points.  
+3. If the dealer's hand value goes over 21 points.  
+  
+It's a tie when:  
+  
+Both players have the same points on their hands.  
+  
+Card's values:  
+  
+- Aces can be either 1 or 11 points - the player chooses the value;  
+- Points for all other cards are their face value;  
+- K, Q, J are 10 points cards;  
+  
 Just like typical blackjack you play in casino.
 First you place a bet by clicking on $100 to start the game. 2 cards will be given to you and the dealer. Pick hit or stand after evaluating your odd to see if you get to keep your money or not. 
 
