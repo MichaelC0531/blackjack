@@ -23,8 +23,13 @@ Card's values:
 Basic Game Flow:  
 1. Game starts when player click on the '$100' button indicate betting  
 2. 2 Cards are dealt to the player and the dealer, 1 of the dealer card is face down  
-3. Player decides to get more card or to end the turn by clicking the 'Hit' button or the 'Hold' button respectively  
-4. 
+3. Player decides to get more card or to end the turn by clicking the 'Hit' button or the 'Stand' button respectively  
+4. Dealer's card is disclosed and extra cards are dealt to dealer only if dealer's point is below 16  
+  
+Potential feature to add:  
+1. Card counting practice mode - Allow players to choose number of decks they play with and used cards are discard after each round  
+2. Total money tracking system - Create different money amount buttons and a number display to let player knows how much they are winning or losing   
+
 
 **Good Luck !!!!!** 
 
