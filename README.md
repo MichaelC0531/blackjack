@@ -20,8 +20,11 @@ Card's values:
 - Points for all other cards are their face value;  
 - K, Q, J are 10 points cards;  
   
-Just like typical blackjack you play in casino.
-First you place a bet by clicking on $100 to start the game. 2 cards will be given to you and the dealer. Pick hit or stand after evaluating your odd to see if you get to keep your money or not. 
+Basic Game Flow:  
+1. Game starts when player click on the '$100' button indicate betting  
+2. 2 Cards are dealt to the player and the dealer, 1 of the dealer card is face down  
+3. Player decides to get more card or to end the turn by clicking the 'Hit' button or the 'Hold' button respectively  
+4. 
 
 **Good Luck !!!!!** 
 
